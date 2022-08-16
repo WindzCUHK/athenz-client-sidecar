@@ -226,6 +226,9 @@ jobs:
         name: Test Docker image
         id: test_docker
         run: |
+          echo ${{ steps.meta.outputs.tags }}
+          echo ${{ steps.meta.outputs.tags[0] }}
+          echo ${{ steps.meta.outputs.tags[1] }}
           docker run --rm ${{ steps.meta.outputs.tags[0] }} --version
 
       # Delete untagged container images
