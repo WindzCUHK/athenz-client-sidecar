@@ -215,12 +215,11 @@ jobs:
           context: .
           # push: ${{ github.event_name != 'pull_request' }}
           push: true
-          load: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           platforms: ${{ env.DOCKER_BUILDX_PLATFORM }}
           build-args: |
-            APP_VERSION=${{ steps.meta.outputs.tags }}
+            APP_VERSION=${{ steps.meta.outputs.version }}
 
       # Test Docker image
       -
