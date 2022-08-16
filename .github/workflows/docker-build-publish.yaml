@@ -226,7 +226,7 @@ jobs:
         name: Test Docker image
         id: test_docker
         run: |
-          docker run --rm ${{ steps.meta.outputs.tags }} --version
+          docker run --rm ${{ steps.meta.outputs.tags[0] }} --version
 
       # Delete untagged container images
       # https://github.com/actions/github-script
